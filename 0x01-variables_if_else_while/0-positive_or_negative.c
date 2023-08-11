@@ -1,9 +1,9 @@
+#include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include <stdio.h>
 
 /**
- * main - display if the number is positive |  negative | zero
+ * Output: if the number is positive or negative or zero
  * Return: return 0 and exit the program
  */
 int main(void)
