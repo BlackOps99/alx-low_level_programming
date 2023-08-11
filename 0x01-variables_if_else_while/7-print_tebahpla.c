@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- * main - output alphabet reverse and lowercase
+ * main - ourput alphabet reverse and lowercase
  * Return: return 0 and exit the program
  */
 int main(void)
