@@ -1,10 +1,9 @@
-#include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <stdio.h>
 
 /**
- * main - display if the number is positive,negative and zero
- * Int n and using random form 
+ * main - display if the number is positive |  negative | zero
  * Return: return 0 and exit the program
  */
 int main(void)
@@ -21,4 +20,3 @@ int main(void)
 		printf("%d is negative\n", n);
 	return (0);
 }
-
