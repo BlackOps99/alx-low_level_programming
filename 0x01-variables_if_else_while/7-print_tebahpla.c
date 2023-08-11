@@ -8,15 +8,8 @@ int main(void)
 {
         char l;
 
-<<<<<<< HEAD
         for (l = 'z'; l >= 'a'; l--)
                         putchar(l);
         putchar('\n');
-=======
-	for (l = 'z'; l >= 'a'; l--)
-			putchar(l);
-	putchar('\n');
->>>>>>> a751a5a (Add 7e4)
-
         return (0);
 }
