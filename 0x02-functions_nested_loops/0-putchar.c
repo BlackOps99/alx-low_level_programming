@@ -1,5 +1,4 @@
 #include "main.h"
-#include <string.h>
 
 /**
  * main - Entry point
@@ -10,13 +9,12 @@
  */
 int main(void)
 {
-	char message[] = "_putchar\n";
+	char outMessage[] = "_putchar\n";
 	int i;
-	size_t length = strlen(message);
 
-	for (i = 0; i < length; i++)
+	for (i = 0; outMessage[i] != '\0'; i++)
 	{
-		_putchar(message[i]);
+		_putchar(outMessage[i]);
 	}
 
 	return (0);
