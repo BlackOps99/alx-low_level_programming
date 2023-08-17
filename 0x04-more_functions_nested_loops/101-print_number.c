@@ -5,26 +5,19 @@
  */
 void print_number(int n)
 {
-int divisor = 1;
-int digit, is_negative = 0;
+unsigned int integer = n;
 if (n < 0)
 {
-is_negative = 1;
-n = -n;
-}
-while (n / divisor > 9)
-{
-divisor *= 10;
-}
-if (is_negative)
-{
+integer = -n;
 _putchar('-');
 }
-while (divisor > 0)
+else
 {
-digit = n / divisor;
-_putchar(digit + '0');
-n %= divisor;
-divisor /= 10;
+integer = n;
 }
+if (integer / 10)
+{
+print_number(integer / 10);
+}
+_putchar((integer % 10) + '0');
 }
