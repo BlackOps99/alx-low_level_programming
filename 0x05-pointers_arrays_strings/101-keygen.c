@@ -9,7 +9,7 @@ int main(void)
 {
 	srand(time(NULL));
 
-	int i;
+	int i = 0;
 	int randomChar;
 	char password[12];
 
