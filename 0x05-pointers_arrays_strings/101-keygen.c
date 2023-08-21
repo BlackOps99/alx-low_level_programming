@@ -8,11 +8,11 @@
 int main(void)
 {
 	srand(time(NULL));
-
-	int i = 0;
+	
 	int randomChar;
 	char password[12];
-
+	int i;
+	
 	for (i = 0; i < 11; i++)
 	{
 		randomChar = rand() % 94 + 33;
