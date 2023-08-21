@@ -9,11 +9,13 @@ int main(void)
 {
 	srand(time(NULL));
 
+	int i;
+	int randomChar;
 	char password[12];
 
-	for (int i = 0; i < 11; i++)
+	for (i = 0; i < 11; i++)
 	{
-		int randomChar = rand() % 94 + 33;
+		randomChar = rand() % 94 + 33;
 		password[i] = (char)randomChar;
 	}
 
