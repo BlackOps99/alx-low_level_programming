@@ -8,15 +8,13 @@
 int main(void)
 {
 	srand(time(NULL));
-	
-	int randomChar;
-	char password[12];
+
 	int i;
-	
+	char password[12];
+
 	for (i = 0; i < 11; i++)
 	{
-		randomChar = rand() % 94 + 33;
-		password[i] = (char)randomChar;
+		password[i] = (char)rand() % 94 + 33;
 	}
 
 	password[11] = '\0';
