@@ -1,4 +1,5 @@
 #include "main.h"
+#include <string.h>
 /**
  * _strncat - parameter name dest and src as pointer and int n
  * @dest: char pointer
@@ -6,23 +7,15 @@
  * @n: int var
  * Return: 0
  */
-char *_strncat(char *dest, const char *src, int n)
+char *_strncat(char *dest, char *src, int n)
 {
-	char *dest_end = dest;
-	int i;
+	int len, b;
 
-	while (*dest_end != '\0')
+	len = strlen(dest);
+
+	for (b = 0; src[b] != '\0' && n > 0; b++, n--, len++)
 	{
-		dest_end++;
+		dest[len] = src[b];
 	}
-
-	for (i = 0; i < n && src[i] != '\0'; i++)
-	{
-		*dest_end = src[i];
-		dest_end++;
-	}
-
-	*dest_end = '\0';
-
 	return (dest);
 }
