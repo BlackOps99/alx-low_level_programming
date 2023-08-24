@@ -7,17 +7,21 @@
  */
 char *rot13(char *str)
 {
-	int i;
-	char base;
+	int x, y;
 
-	for (i = 0; str[i] != '\0'; i++)
+	char sera[] = {"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"};
+	char serb[] = {"nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM"};
+
+	for (x = 0; str[x] != '\0'; x++)
 	{
-		if (isalpha(str[i]))
+		for (y = 0; sera[y] != '\0'; y++)
 		{
-			base = (islower(str[i])) ? 'a' : 'A';
-			str[i] = (str[i] - base + 13) % 26 + base;
+			if (str[x] == sera[y])
+			{
+				str[x] = serb[y];
+				break;
+			}
 		}
 	}
-
 	return (str);
 }
