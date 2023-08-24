@@ -1,47 +1,30 @@
 #include "main.h"
-#include <stdbool.h>
-#include <ctype.h>
 /**
- * is_leet_char - parameter name c as char type
- * @c: type char
- * Return: true if leet_chars found else false
+ * leet - Encode a string into 1337
+ * @s: string
+ * Return: string
  */
-bool is_leet_char(char c)
+char *leet(char *s)
 {
-	char leet_chars[] = "aAeEoOtTlL";
-	int i;
+	int x, y, z;
+	char letter[] = "aAeEoOtTlL";
+	char new[] = "4433007711";
 
-	for (i = 0; leet_chars[i] != '\0'; i++)
+	x = 0;
+	while (s[x] != '\0')
 	{
-		if (c == leet_chars[i])
+		y = 0;
+		z = 0;
+		while (letter[y] != '\0')
 		{
-			return (true);
-		}
-	}
-
-	return (false);
-}
-/**
- * leet - parameter name str as char poitner
- * @str: type char poitner
- * Return: true the new string
- */
-char *leet(char *str)
-{
-	char leet_replacements[] = "4437101";
-	int i, j;
-
-	for (i = 0; str[i] != '\0'; i++)
-	{
-		for (j = 0; j < 7; j++)
-		{
-			if (str[i] == "aAeEoOtTlL"[j])
+			if (s[x] == letter[y])
 			{
-				str[i] = leet_replacements[j];
-				break;
+				z = y;
+				s[x] = new[z];
 			}
+			y++;
 		}
+		x++;
 	}
-
-	return (str);
+	return (s);
 }
