@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * reverse_array - parameter name str as pointer
+ * string_toupper - parameter name str as pointer
  * @str: char pointer
  * Return: 0
  */
