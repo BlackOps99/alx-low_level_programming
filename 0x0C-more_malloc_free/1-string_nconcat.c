@@ -40,9 +40,9 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	s1_len = (unsigned int)_strlen(s1);
 
-	endlen = sizeof(char) * (s1_len + n + 1);
+	endlen = s1_len + n;
 
-	ptr = malloc(endlen);
+	ptr = malloc(sizeof(char) * (endlen + 1));
 
 	if (ptr == NULL)
 	{
