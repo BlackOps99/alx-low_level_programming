@@ -4,22 +4,18 @@
  * _strncpy - parameter name dest and src as pointer and int n
  * @dest: char pointer
  * @src: char pointer
- * @n: int var
  * Return: 0
  */
-char *_strncpy(char *dest, char *src, int n)
+char *_strncpy(char *dest, char *src)
 {
-	int i;
+	int index = 0;
 
-	for (i = 0; i < n && src[i] != '\0'; i++)
+	for (; src[index] != '\0'; index++)
 	{
-		dest[i] = src[i];
+		dest[index] = src[index];
 	}
 
-	for (; i < n; i++)
-	{
-		dest[i] = '\0';
-	}
+	dest[index] = '\0';
 
 	return (dest);
 }
@@ -30,15 +26,11 @@ char *_strncpy(char *dest, char *src, int n)
  */
 int _strlen(char *s)
 {
-	int length = 0;
+	int i;
 
-	while (*s != '\0')
-	{
-		length++;
-		s++;
-	}
-
-	return (length);
+	for (i = 0; s[i] != '\0'; i++)
+		;
+	return (i);
 }
 /**
  * new_dog - create new dog
@@ -72,8 +64,8 @@ dog_t *new_dog(char *name, float age, char *owner)
 		free(createdog);
 		return (NULL);
 	}
-	createdog->name = _strncpy(createdog->name, name, _strlen(name));
+	createdog->name = _strncpy(createdog->name, name);
 	createdog->age = age;
-	createdog->owner = _strncpy(createdog->owner, owner, _strlen(owner));
+	createdog->owner = _strncpy(createdog->owner, owner);
 	return (createdog);
 }
