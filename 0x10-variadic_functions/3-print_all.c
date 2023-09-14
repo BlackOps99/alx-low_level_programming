@@ -7,6 +7,7 @@
 void print_all(const char *const format, ...)
 {
 	va_list args;
+	int els = 0;
 	unsigned int i = 0;
 	char *separator = "";
 	char *str;
@@ -32,16 +33,17 @@ void print_all(const char *const format, ...)
 				str = "(nil)";
 			printf("%s%s", separator, str);
 			break;
+		default:
+			els = 1;
+			break;
 		}
 
-		separator = ", ";
+		if (els == 0)
+			separator = ", ";
 		i++;
-
 		if (format[i] == '\0')
 			break;
 	}
-
 	va_end(args);
-
 	printf("\n");
 }
