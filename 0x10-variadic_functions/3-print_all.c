@@ -7,7 +7,6 @@
 void print_all(const char *const format, ...)
 {
 	va_list args;
-	int els = 0;
 	unsigned int i = 0;
 	char *separator = "";
 	char *str;
@@ -29,21 +28,18 @@ void print_all(const char *const format, ...)
 			break;
 		case 's':
 			str = va_arg(args, char *);
-			if (str == NULL)
-				str = "(nil)";
-			printf("%s%s", separator, str);
+			printf("%s%s", separator, (str == NULL) ? "(nil)" : str);
 			break;
 		default:
-			els = 1;
-			break;
+			i++;
+			continue;
 		}
 
-		if (els == 0)
-			separator = ", ";
+		separator = (format[i + 1] != '\0') ? ", " : "";
 		i++;
-		if (format[i] == '\0')
-			break;
 	}
+
 	va_end(args);
+
 	printf("\n");
 }
