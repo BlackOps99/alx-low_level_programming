@@ -33,7 +33,7 @@ int copy_file(const char *file_from, const char *file_to)
 	if (fd_source == -1)
 		return (-1);
 
-	fd_dest = open(file_to, O_WRONLY | O_CREAT | O_TRUNC, 0664);
+	fd_dest = open(file_to, O_WRONLY | O_CREAT | O_TRUNC | O_APPEND, 0664);
 
 	if (fd_dest == -1)
 	{
