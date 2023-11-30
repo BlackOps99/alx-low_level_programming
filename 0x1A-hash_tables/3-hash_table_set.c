@@ -74,7 +74,10 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 	elemnet = createElement(key, value);
 	if (elemnet == NULL)
+	{
+		free(temp);
 		return (0);
+	}
 
 	ht->array[index] = elemnet;
 
