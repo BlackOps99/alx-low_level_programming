@@ -48,22 +48,28 @@ hash_node_t *createElement(const char *key, const char *value)
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	hash_node_t *elemnet = NULL;
-	unsigned long int index, i;
+	hash_node_t *elemnet = NULL, *temp = NULL;
+	unsigned long int index;
 
 	if (ht == NULL || ht->size == 0 || ht->array == NULL || key == NULL
 	|| strlen(key) == 0 || value == NULL)
 		return (0);
 
 	index = key_index((const unsigned char *)key, ht->size);
-	for (i = index; ht->array[i]; i++)
+
+	temp = ht->array[index];
+
+	while (temp != NULL)
 	{
-		if (strcmp(ht->array[i]->key, key) == 0)
+		if (strcmp(temp->key, key) == 0)
 		{
-			free(ht->array[i]->value);
-			strcpy(ht->array[i]->value, value);
+			free(temp->value);
+			strcpy(temp->value, value);
+			if (temp->value == NULL)
+				return (0);
 			return (1);
 		}
+		temp = temp->next;
 	}
 
 	elemnet = createElement(key, value);
