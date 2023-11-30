@@ -79,6 +79,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		return (0);
 	}
 
+	elemnet->next = ht->array[index];
 	ht->array[index] = elemnet;
 
 	return (1);
